@@ -3,13 +3,6 @@ import re
 
 data = get_data(day=1, year=2023)
 
-# num_dict = {"one" : '1', "two" : "2", "three" : '3', "four": '4', \
-# "five": '5', "six": '6', "seven": '7', "eight": '8', "nine" : '9'}
-
-num_dict = {"one" : 'o1e', "two" : "t2o", "three" : 't3e', "four": '4', \
-"five": 'f5e', "six": '6', "seven": '7n', "eight": 'e8t', "nine" : 'n9e'}
-
-
 def p1():
     total = 0
     for line in data.split('\n'):
@@ -29,6 +22,10 @@ def p1():
 
 def p2():
     total = 0
+
+    num_dict = {"one" : 'o1e', "two" : "t2o", "three" : 't3e', "four": '4', \
+    "five": 'f5e', "six": '6', "seven": '7n', "eight": 'e8t', "nine" : 'n9e'}
+    
     for line in data.split('\n'):
         for key, val in num_dict.items():
             line = line.replace(key, val)
