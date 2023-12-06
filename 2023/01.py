@@ -1,5 +1,4 @@
 from aocd import get_data
-import re
 
 data = get_data(day=1, year=2023)
 
@@ -25,7 +24,7 @@ def p2():
 
     num_dict = {"one" : 'o1e', "two" : "t2o", "three" : 't3e', "four": '4', \
     "five": 'f5e', "six": '6', "seven": '7n', "eight": 'e8t', "nine" : 'n9e'}
-    
+
     for line in data.split('\n'):
         for key, val in num_dict.items():
             line = line.replace(key, val)
