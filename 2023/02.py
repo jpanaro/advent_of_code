@@ -3,7 +3,6 @@ from parse import parse, findall, search
 
 data = get_data(day=2, year=2023)
 
-
 def p1():
     id_total = 0
     for game in data.split('\n'):
@@ -23,8 +22,18 @@ def p1():
     
     return id_total
 
+def p2():
+    power_sum = 0
+    for game in data.split('\n'):
 
+        green = max(list(r[0] for r in findall("{:d} green", game)))
+        blue = max(list(r[0] for r in findall("{:d} blue", game)))
+        red = max(list(r[0] for r in findall("{:d} red", game)))
+
+        power_sum += (green * red * blue)
+    
+    return power_sum
 
 
 print(p1())
-        
+print(p2())
